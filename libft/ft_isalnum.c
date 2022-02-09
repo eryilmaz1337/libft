@@ -6,14 +6,14 @@
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:44:38 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/05 12:04:07 by eryilmaz         ###   ########.tr       */
+/*   Updated: 2022/02/07 14:18:13 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_isalnum(int i)
 {
-	if((ft_isdigit(i) == 1 || ft_isalpha(i) == 1 ) && ft_isascii(i) == 1)
+	if ((ft_isdigit (i) == 1 || ft_isalpha (i) == 1) && ft_isascii (i) == 1)
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:31:34 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/05 12:04:41 by eryilmaz         ###   ########.tr       */
+/*   Updated: 2022/02/07 14:19:10 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,4 +20,3 @@ int	ft_isalpha(int str)
 	}
 	return (1);
 }
-

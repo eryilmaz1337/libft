@@ -6,13 +6,15 @@
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:54:00 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/01/31 16:54:07 by eryilmaz         ###   ########.tr       */
+/*   Updated: 2022/02/07 14:16:21 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-size_t	ft_strlen(char *str)
+
+size_t	ft_strlen(const char *str)
 {
-	size_t i;
+	size_t	i;
+
 	i = 0;
 	while (str[i] != '\0')
 	{
