@@ -16,6 +16,8 @@ void	*ft_memcpy(void *gelen, const void *in, size_t b)
 	size_t	i;
 
 	i = 0;
+	if(!gelen && !in)
+		return (NULL);
 	while (i < b)
 	{
 		((unsigned char *)gelen)[i] = ((unsigned char *)in)[i];

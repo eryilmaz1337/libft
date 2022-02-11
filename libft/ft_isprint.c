@@ -6,12 +6,12 @@
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:47:35 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/05 12:07:04 by eryilmaz         ###   ########.tr       */
+/*   Updated: 2022/02/09 18:43:52 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_isprint(char i)
+int	ft_isprint(int i)
 {
 	if (i > 31 && i < 127)
 		return (1);

@@ -26,3 +26,8 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
+int main()
+{
+    char dizi[] = "bonjour";
+    printf("%s",ft_strchr(dizi,'o'));
+}

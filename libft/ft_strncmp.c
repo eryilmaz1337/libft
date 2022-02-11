@@ -18,7 +18,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t			i;
 
 	i = 0;
-	k1 = (unsigned char *)s1;
+	k1 = (unsigned char *)s1; 
 	k2 = (unsigned char *)s2;
 	while (k1[i] == k2[i] && (k1[i] != '\0' || k2[i] != '\0'))
 		i++;

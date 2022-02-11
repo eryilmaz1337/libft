@@ -6,7 +6,7 @@
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 11:42:50 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/05 11:42:52 by eryilmaz         ###   ########.tr       */
+/*   Updated: 2022/02/09 18:44:15 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -18,7 +18,7 @@ int	ft_isalnum(int i);
 int	ft_isalpha(int str);
 int	ft_isascii(int i);
 int	ft_isdigit(int str);
-int	ft_isprint(char i);
+int	ft_isprint(int i);
 void *ft_memchr(const void *s, int c,size_t n);
 int ft_memcmp(const char *s1 , const char *s2 , size_t n);
 void *ft_memcpy(void *gelen, const void *in, size_t b);
@@ -36,3 +36,6 @@ int ft_toupper(int c);
 int ft_atoi(const char *str);
 void *ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *src);
+char *ft_strtrim(char const *s1, char const *set);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+char *ft_strjoin(char const *s1, char *s2);

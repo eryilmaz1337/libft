@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 11:37:55 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/09 16:56:06 by eryilmaz         ###   ########.tr       */
+/*   Created: 2022/02/09 17:34:00 by eryilmaz          #+#    #+#             */
+/*   Updated: 2022/02/09 17:34:02 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	char	*p;
-	int		i;
-	int		e;
+	char *dizi;
+	size_t 	i;
 
-	e = 0;
-	i = ft_strlen (src);
-	p = (char *) malloc(i + 1);
-	if(p==NULL)
-		return(NULL);
-	while (src[e] != '\0')
+	if(!s)
+		return (NULL);
+	i = 0;
+	dizi = malloc((sizeof(char) * len) + 1);
+	if(start+len > ft_strlen(s))
+		return (dizi);
+	if(!dizi)
+		return (0);
+	while (i < len)
 	{
-		p[e] = src[e];
-		e++;
+		dizi[i]=s[start];
+		i++;
+		start++;
 	}
-	p[i] = '\0';
-	return (p);
+	dizi[i] = '\0';
+	return (dizi);
+
 }

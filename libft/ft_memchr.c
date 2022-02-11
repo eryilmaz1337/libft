@@ -20,16 +20,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	kon = 0;
 	k = (char *)s;
-	while (k[i] != '\0' && kon == 0)
+	while (i < n)
 	{
 		if (k[i] == c)
-			kon = 1;
+			return(&k[i]);
 		i++;
 	}
-	if (n < i)
-		return (0);
-	else if (kon == 1)
-		return (&k[i - 1]);
-	else
-		return (NULL);
+	return(0);
 }
