@@ -10,60 +10,64 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
-char *atama(char *a, char *b)
+char *sondonus(char *bas, char *son)
 {
-    char *gelen;
-    size_t i;
-    size_t h;
+    char *ol;
+    int size;
+    int i;
 
-    h = b - a;
     i = 0;
-    gelen = malloc(h + 1);
-    while (h >i )
+    size = son - bas;
+    ol = malloc(size + 2);
+    if (!ol)
+        return (NULL);
+    while (i <= size)
     {
-        gelen[i] = *a;
-        a++;
+        ol[i] = *bas;
+        bas++;
         i++;
     }
-    gelen[i] = '\0';
-    return (gelen);
+    ol[i] = '\0';
+    return (ol);
+    
 }
+int kontrol(char c, char *g)
+{
+    
+    while (*g != '\0')
+    {
+        if(c == *g)
+            return (1);
+        g++;
+    }
+    return (0);
+    
 
+}
 char *ft_strtrim(char const *s1, char const *set)
 {
+    int i;
     size_t a;
-    size_t i;
-    size_t k;
-    char *ana;
+    char *bas;
     char *son;
+    char *k1;
+    char *k2;
     char *gelen;
 
-    a = strlen(set);
-    k = strlen(s1);
+    if (!s1 || !set)
+        return(NULL);
     i = 0;
-    ana = &((char *)s1)[i];
-    while (s1[i]==set[i])
-    {
-        if(i + 1 == a)
-            ana = &((char *)s1)[i + 1]; 
+    a = ft_strlen(s1) - 1 ;
+    k1 = (char *)s1;
+    k2 = (char *)set;
+    while (kontrol(k1[i],k2))
         i++;
-    }
-    while (s1[k-1] == set[a-1])
-    {
-        if(a == 1)
-            son = &((char *)s1)[k - 1];
+    bas = &k1[i];
+    while (kontrol(k1[a],k2))
         a--;
-        k--;
-    }
-    son = &((char *)s1)[k];
-    gelen = atama(ana,son);
+    son = &k1[a];
+    if(son - bas < 0)
+        return(ft_strdup(""));
+    gelen = sondonus(bas,son);
     return(gelen);
-}
-
-int main()
-{
-    char s1[] = "lorem ipsum dolor sit amet";
-    char	set [] = "\t \nxzy";
-    printf("%s",ft_strtrim(s1,set));
 }
