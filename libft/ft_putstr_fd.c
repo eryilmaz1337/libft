@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
+/*   By: eryilmaz <eryilmaz@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 11:23:34 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/07 17:06:05 by eryilmaz         ###   ########.tr       */
+/*   Created: 2022/02/14 19:24:42 by eryilmaz          #+#    #+#             */
+/*   Updated: 2022/02/14 19:24:44 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
-char	*ft_strchr(const char *s, int c)
+void ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
-	size_t	a;
+    int i;
 
-	a = ft_strlen(s);
-	i = 0;
-	while (i <= a)
-	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i++;
-	}
-	return (NULL);
+    i = 0;
+    if (!s)
+        return;
+    while (s[i]!='\0')
+    {
+        write(fd,&s[i],1);
+        i++;
+    }
 }

@@ -10,49 +10,81 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
-char **olusan(void *adresler, size_t a, char *tum,char c)
+static char	*ft_word(char *str, const char *s1, int son, int wordlen)
 {
-    char **giden;
-    size_t i;
-    size_t k;
-    k = 0;
-    i = 0;
-    gelen = malloc(a);
-    while (k<=a)
-    {
-        gelen[k][] = malloc(&tum)
-        while (adresler[i] != &tum[i])
-        {
-            gelen[k][i]=tum[i];
-            i++;
-        }
-        k++;
-        i++;
-    }
-    return(gelen)
+	int	i;
+
+	i = 0;
+	while (i < wordlen)
+	{
+		str[i] = s1[son - wordlen + i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
-char **ft_split(char const *s, char c)
-{
-    size_t a;
-    size_t i;
-    size_t b;
-    char *genel_dizi;
-    void *adresler;
-    
-    a = ft_strlen(s);
-    i = 0;
-    b = 0;
-    genel_dizi = (char *)s;
-    while (i<a)
-    {   
-        if(genel_dizi[i]==c)
-        {
-            adresler[b] = &genel_dizi[i];
-            b++;
-        }
-        i++;
-    }
-    olusan(adresler, b + 1, genel_dizi,c)
 
+static char	**ft_place(char **str, char const *s1, char ch, int wordcount)
+{
+	int		index;
+	int		word_len;
+	int		word;
+
+	word = 0;
+	index = 0;
+	word_len = 0;
+	while (word < wordcount)
+	{
+		while (s1[index] != '\0' && s1[index] == ch)
+			index++;
+		while (s1[index] != '\0' && s1[index] != ch)
+		{
+			word_len++;
+			index++;
+		}
+		str[word] = (char *)malloc(sizeof(char) * (word_len + 1));
+		if (!str)
+			return (0);
+		ft_word(str[word], s1, index, word_len);
+		word_len = 0;
+		word++;
+	}
+	str[word] = 0;
+	return (str);
+}
+
+static int	strcount(char const *str, char c)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == c)
+			i++;
+		else
+		{
+			count++;
+			while (str[i] && str[i] != c)
+				i++;
+		}
+	}
+	return (count);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**str;
+	int		wrdcnt;
+
+	if(!s)
+		return(0);
+	wrdcnt = strcount(s, c);
+	str = malloc(sizeof(char *) * (wrdcnt + 1));
+	if (!str)
+		return (0);
+	ft_place(str, s, c, wrdcnt);
+	return (str);
 }
