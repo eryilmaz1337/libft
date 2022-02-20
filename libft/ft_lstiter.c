@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
+/*   By: eryilmaz <eryilmaz@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 11:23:34 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/17 11:49:12 by eryilmaz         ###   ########.tr       */
+/*   Created: 2022/02/16 13:09:48 by eryilmaz          #+#    #+#             */
+/*   Updated: 2022/02/17 13:53:56 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	i;
-	size_t	a;
+	t_list	*tmp;
 
-	a = ft_strlen(s);
-	i = 0;
-	while (i <= a)
+	tmp = lst;
+	if (!f || !lst)
+		return ;
+	while (tmp)
 	{
-		if (s[i] == (unsigned char)c)
-			return ((char *)s + i);
-		i++;
+		f(tmp->content);
+		tmp = tmp->next;
 	}
-	return (NULL);
 }

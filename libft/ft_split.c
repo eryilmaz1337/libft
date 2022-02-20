@@ -6,10 +6,11 @@
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 15:34:08 by eryilmaz          #+#    #+#             */
-/*   Updated: 2022/02/12 15:34:10 by eryilmaz         ###   ########.tr       */
+/*   Updated: 2022/02/17 13:11:44 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
 static char	*ft_word(char *str, const char *s1, int son, int wordlen)
 {
 	int	i;
@@ -79,8 +80,8 @@ char	**ft_split(const char *s, char c)
 	char	**str;
 	int		wrdcnt;
 
-	if(!s)
-		return(0);
+	if (!s)
+		return (0);
 	wrdcnt = strcount(s, c);
 	str = malloc(sizeof(char *) * (wrdcnt + 1));
 	if (!str)
